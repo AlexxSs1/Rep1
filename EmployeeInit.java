@@ -1,34 +1,37 @@
-package ru.ncedu.java.tasks;
+/*package ru.ncedu.java.tasks;*/
 
-public class EmployeeImpl implements Employee {
+public class EmployeeImpl {
 	
 	private String FirstName;
 	private String LastName;
-	private Int Salary = 1000;
-	private Employee Manager;
+	private int Salary = 1000;
+	private EmployeeImpl Manager;
 	private String TopManager;
 	
-	public String getFirstName(){
+	public String getFirstName() {
+		System.out.println("Имя:" + FirstName);
 		return FirstName;
 	}
 	
-	public void setFirstName(string name) {
+	public void setFirstName(String name) {
 		FirstName = name;
 	}
 	
-	public String getLastName(){
+	public String getLastName() {
+		System.out.println("Фамилия:" + LastName);
 		return LastName;
 	}
 	
-	public void setLastName(string LastName){
+	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}
 	
-	public String getFullName(){
-		System.out.println(FirstName, " ", LastName);
+	public void getFullName(){
+		System.out.println("Полное имя:" + FirstName + " " + LastName);
 	}
 	
 	public int getSalary(){
+		System.out.println("Зарплата:" + Salary);
 		return Salary;
 	}
 	
@@ -36,89 +39,37 @@ public class EmployeeImpl implements Employee {
 		Salary = Salary + value;
 	}
 	
-	public String getManagerName(){
+	public void getManagerName(){
 		if (Manager.FirstName instanceof String) {
-			System.out.println(Manager.FirstName, " ", Manager.LastName);
+			System.out.println(Manager.FirstName + " " + Manager.LastName);
 		} else {
 			System.out.println("No manager");
 		}		
 	}
 	
-	public String getTopManager(){
+	
+    
+    public String getTopManager(){
 		if (TopManager instanceof String) {
+			System.out.println("Имя топ-менеджера" + TopManager);
 			return TopManager;
 		} else {
-			System.out.println(FirstName, " ", LastName);
+			System.out.println("Имя топ-менеджера:" + FirstName + " " + LastName);
+			return ""; 
 		}
 	}
-}
-	
 
-
-public interface Employee {
-	/**
-	 * @return Зарплата сотрудника на настоящий момент.
-	 */
-	int getSalary();
-
-	/**
-	 * Увеличивает зарплату сотрудника на заданное значение
-	 * @param value Значение, на которое нужно увеличить
-	 */
-	public void increaseSalary(int value);
-
-	/**
-	 * @return Имя сотрудника
-	 */
-	public String getFirstName();
-
-	/**
-	 * Устанавливает Имя сотрудника
-	 * @param firstName Новое имя
-	 */
-	public void setFirstName(String firstName);
-
-	/**
-	 * @return Фамилию сотрудника
-	 */
-	public String getLastName();
-
-	/**
-	 * Устанавливает Фамилию сотрудника
-	 * @param lastName Новая фамилия
-	 */
-	public void setLastName(String lastName);
-
-	/**
-	 * @return Имя и Фамилию сотрудника, разделенные символом " " (пробел)
-	 */
-	public String getFullName();
-
-	/**
-	 * Устанавливает Менеджера сотрудника
-	 * @param manager Объект, соответствующий Менеджеру
-	 */
-	public void setManager(Employee manager);
-
-	/**
-	 * Возвращает Имя и Фамилию Менеджера, разделенные символом " " (пробел).
-	 * Если Менеджер не задан, возвращает строку "No manager".
-	 */
-	public String getManagerName();
-
-	/**
-	 * Возвращает Менеджера верхнего уровня, т.е. вершину иерархии сотрудников, 
-	 *   в которую входит данный сотрудник.
-	 * Если над данным сотрудником нет ни одного менеджера, возвращает данного сотрудника.
-	 */
-	public Employee getTopManager();
-}
-
-public class Program{
      public static void main(String[] args) {
          EmployeeImpl E1 = new EmployeeImpl();
-         E1.getSalary;
-     
+         E1.Manager = new EmployeeImpl();
+         E1.setFirstName("AAAA");
+     	 E1.getFirstName();
+     	 E1.getLastName();
+     	 E1.getFullName();
+     	 E1.getSalary();
+     	 E1.getTopManager();
+     	 E1.getManagerName();
+     	
      }
 
 
