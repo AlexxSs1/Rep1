@@ -114,4 +114,12 @@ public interface Employee {
 	public Employee getTopManager();
 }
 
+public class Program{
+     public static void main(String[] args) {
+         EmployeeImpl E1 = new EmployeeImpl();
+         E1.getSalary;
+     
+     }
 
+
+}
